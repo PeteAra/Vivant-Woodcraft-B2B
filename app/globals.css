@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f7f4ef;
+  --bg-elevated: #fffcfa;
+  --ink: #1c1917;
+  --ink-muted: #57534e;
+  --wood: #a68a64;
+  --walnut: #5c4033;
+  --stone: #8a8580;
+  --accent: #8b7355;
+  --accent-hover: #6f5c44;
+  --border: rgba(28, 25, 23, 0.12);
+  --shadow: 0 18px 50px rgba(28, 25, 23, 0.08);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-wood: var(--wood);
+  --color-walnut: var(--walnut);
+  --color-stone: var(--stone);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-border: var(--border);
+  --font-sans: var(--font-outfit);
+  --font-display: var(--font-cormorant);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-outfit), system-ui, sans-serif;
+    background-image: radial-gradient(
+      ellipse at top,
+      rgba(166, 138, 100, 0.08),
+      transparent 52%
+    );
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--accent) 28%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-cormorant), Georgia, serif;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

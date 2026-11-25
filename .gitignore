@@ -1,0 +1,30 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# next
+/.next/
+/out/
+
+# env
+.env
+.env*.local
+
+# debug / os
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# typescript
+next-env.d.ts
+*.tsbuildinfo
+
+# Generated downloads with paths too long for Windows git
+vivant_woodcraft_photos/_Q8dQjE6*
+vivant_woodcraft_photos/UPMxipDg*
